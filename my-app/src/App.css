@@ -6,13 +6,55 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+ul {
+  list-style: none;
+  padding-left: 0;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.footer{
+  background-color: #FFA500;
+  color: #FFFFFF;
+  padding: 10px 4rem;
+  text-Align: space-between;
+  font-weight: 500;
+}
+.aStyle{
+  text-decoration: none;
+  color: #FFFFFF;
+}
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #25d366; 
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-size: 24px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
 
+
+.BackGroundImg{
+  background-image: url("https://i.ibb.co/bB84GQJ/pexels-gilberto-reyes-825949.jpg");
+}
+.register_style{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -22,6 +64,24 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+.containerNavbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0px;
+}
+svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
+  overflow: visible;
+  box-sizing: content-box;
+  color: gray;
+  margin-top: 36px;
+}
+.masterContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+
 }
 
 .App-link {
@@ -36,16 +96,43 @@
     transform: rotate(360deg);
   }
 }
- /* App.css */
-/* Estilos personalizados para el formulario */
+.reset{
+  padding: 10px;
+    margin-bottom: 20px;
+}
 form {
-  background-color: #fde2a9; /* Color anaranjado */
+  background-color: #fde2a9a1; /* Color anaranjado */
   border: 1px solid #ffa500; /* Color amarillo */
   border-radius: 5px;
   padding: 20px;
-  margin: 20px auto;
+  margin: 20px;
+  
+}
+.slider-block__text{
+  font-size: 1.35rem;
+    color: #090909;
+    font-weight: 500;
+    text-shadow: 3px 1px 3px rgb(0 0 0 / 28%);
+    margin-bottom: 1.875rem;
+    font-weight: 500;
 }
 
+.titulo_bienvenidos, .subtitulo_bienvenidos{
+  padding: 5px 20px;
+  margin: 5px 20px;
+  align-items: center;
+}
+.displayfle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+}
+.container_flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 label {
   font-size: 16px;
   margin-bottom: 10px;
@@ -54,26 +141,142 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-  width: 100%;
+  width: 90%;
   padding: 10px;
+  margin: 0px 20px;
   font-size: 16px;
-  border: 1px solid #ffa500; /* Color amarillo */
+  border: 1px solid #ffa500;
   border-radius: 5px;
   margin-bottom: 20px;
+  margin-top: 15px;
 }
+th{
+  width: 20%;
+}
+tr{
+  padding: 5px 0px;
+  height: 46px;
+}
+.btnPagar{
+    margin-bottom: 20px;
+    background: gray;
+    color: white;
+    width: 168px;
+    font-family: 'Raleway',sans-serif !important;
+    font-weight: 600;
+    border: none;
+    border-radius: 15px;
+    padding: 5px;
+    
+}
+.btnPagar:hover{
+  transform: scale(1.1);
+}
+.trbordertop{
+  border-top: 2px solid gray
+}
+.btnDeshacer{
+  background: orange;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    width: 80px;
+    font-weight: 600;
+    font-size: 14px;
+    height: 28px;
+    cursor: pointer;
+}
+.btnDeshacer:hover{
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  width: 80px;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: #090909;
+  
+  
+}
+.btnAgregar{
+  background: #090909;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  width: 80px;
+  font-weight: 600;
+  font-size: 14px;
+  height: 28px;
+}
+.btnSalir{
+  background: none;
+  border: none;
+  color: #090909;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 40px;
+  font-size: 20px;
 
-button[type="submit"] {
-  background-color: #ff4500; /* Color anaranjado */
-  color: #fff; /* Color blanco */
-  padding: 10px 20px;
+}
+.btnSalir:hover{
+  transform: scale(1.1);
+}
+.ContainerPendientes{
+  border: 4px solid orange;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #dee2e6b5;
+    margin: 2px 46px;
+}
+.ContainerPagados{
+  border: 4px solid orange;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #dee2e6b5;
+    margin: 40px 46px;
+}
+.tableStyle{
+  width: 80%;
+  padding: 40px;
+  margin: 40px;
+  border-radius: 20px;
+  
+}
+.trPendientes{
+  font-size: xx-large;
+  display: flex;
+  margin-top: -30px;
+  
+}
+.slider-block__title {
+  font-size: 3.5rem;
+    color: #090909;
+    line-height: 1;
+    text-shadow: 5px 1px 3px rgb(0 0 0 / 19%);
+    margin: 0.7rem 0 0.9375rem;
+    font-weight: 400;
+}
+.textLogin{
+  width: 50%;
+}
+button[type="submit"], .ConocerMas {
+  background-color: #ffad01;
+  color: #090909 !important;
+  font-weight: 700;
+  padding: 10px 30px;
   font-size: 16px;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
+
 }
 
 button[type="submit"]:hover {
-  background-color: #ff6347; /* Color anaranjado más claro */
+  box-shadow: 0 0 15px transparent;
 }
 
 .btn-link {
@@ -84,10 +287,119 @@ button[type="submit"]:hover {
 .btn-link:hover {
   text-decoration: underline;
 }
+.forget, .RegisterStyle{
+  font-size: 16px;
+  margin-bottom: 10px;
+  background: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+@media (max-width: 800px) {
+
+  .tableStyle {
+    display: block;
+    overflow-x: auto;
+  }
+  .tableStyle th, .tableStyle td {
+    white-space: nowrap;
+  }
+  th{
+    padding: 20px
+  }
+  .textLogin{
+    width: 100%;
+  }
+  .displayfle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .container_flex{
+    display: flex;
+    flex-direction: column;
+  }
+
+  form {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 80%;
+  padding: 10px;
+  margin: 0px 20px;
+  font-size: 16px;
+  border: 1px solid #ffa500;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+
+}
 
 /* Estilos responsivos para smartphone y iPhone */
 @media (max-width: 576px) {
+  .trPendientes {
+    font-size: x-large;
+    display: flex;
+    margin-top: -67px;
+}
+  .ContainerPendientes {
+    border: 4px solid orange;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #dee2e6b5;
+    margin: 2px 9px;
+}
+  .btnSalir{
+    background: none;
+    border: none;
+    color: #090909;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 36px !important;
+    font-size: 15px;
+    margin-left: -18px !important;
+  }
+  .logoEmpresa{
+    width: 150px !important;
+    height: auto;
+    margin: 25px;
+  }
+  .textLogin{
+    width: 100%;
+  }
+
+  .displayfle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .container_flex{
+    display: flex;
+    flex-direction: column;
+  }
+
   form {
     padding: 10px;
+    margin-bottom: 20px;
   }
+  input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 70%;
+  padding: 10px;
+  margin: 0px 20px;
+  font-size: 16px;
+  border: 1px solid #ffa500;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
 }

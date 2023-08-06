@@ -1,0 +1,67 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "fecha": "23-08-2023",
+            "nombre": "Maria",
+            "servicio": "Cuidador/a",
+            "valor": 12000,
+            "Estado": "pagado"
+        },
+        {
+            "id": 2,
+            "fecha": "03-02-2023",
+            "nombre": "Edmundo",
+            "servicio": "Paseador/a",
+            "valor": 15000,
+            "Estado": "pendiente"  
+        }, 
+        {
+            "id": 3,
+            "fecha": "15-06-2023",
+            "nombre": "Susana",
+            "servicio": "Cuidador/a",
+            "valor": 12000,
+            "Estado": "pagado"
+        },
+        {
+            "id": 4,
+            "fecha": "02-02-2023",
+            "nombre": "Jonathan",
+            "servicio": "Paseador/a",
+            "valor": 15000,
+            "Estado": "pendiente" 
+        },
+        {
+            "id": 5,
+            "fecha": "23-08-2023",
+            "nombre": "Gloria",
+            "servicio": "Cuidador/a",
+            "valor": 12000,
+            "Estado": "pagado"
+        },
+        {
+            "id": 6,
+            "fecha": "08-02-2023",
+            "nombre": "Javier",
+            "servicio": "Paseador/a",
+            "valor": 15000,
+            "Estado": "pendiente" 
+        },
+        {
+            "id": 1,
+            "fecha": "23-08-2023",
+            "nombre": "Ana",
+            "servicio": "Cuidador/a",
+            "valor": 12000,
+            "Estado": "pagado"
+        },
+        {
+            "id": 1,
+            "fecha": "23-08-2023",
+            "nombre": "Abigail",
+            "servicio": "Cuidador/a",
+            "valor": 12000,
+            "Estado": "pagado"
+        }]
+    }

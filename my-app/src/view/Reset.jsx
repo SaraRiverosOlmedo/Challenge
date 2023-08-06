@@ -22,10 +22,11 @@ const Reset = () => {
     }
 
   return (
-      <main>
+    <main className="mx-auto mt-5 img-fluid" style={{ backgroundImage: 'url("https://i.ibb.co/3pg7gWF/pexels-luis-quintero-4000092.jpg")', backgroundRepeat: 'no-repeat',  backgroundSize: 'cover', height: '100vh', overflowY: 'auto' }}>
+    <img src="https://images.jumpseller.com/store/luna-pets/store/logo/logo_2.png?1682603062" alt="logo" className="mx-auto mt-5" style={{ width: '200px', height: 'auto' }} />
+    <div>
     <h2 className="text-5xl my-10 mt-15 text-center"> Recuperar contraseña </h2>
-    
-    <form onSubmit={procesarDatos} className="bg-pink-100 p-5 rounded-lg">
+    <form onSubmit={procesarDatos} className="reset">
       <div className="mb-6">
         {error ? (
           <div
@@ -70,9 +71,7 @@ const Reset = () => {
       </div>
       </div>
     </form>
-
-
-    
+    </div>
     </main>
   )
   
