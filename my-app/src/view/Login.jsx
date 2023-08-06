@@ -1,6 +1,9 @@
 import React from "react";
 import { LoginContext } from "../Context/LoginProvider";
 import { Link } from "react-router-dom";
+import Footer from "../Components/Footer";
+
+
 
 const Login = (props) => {
   const {
@@ -17,6 +20,8 @@ const Login = (props) => {
     error,
     setEmail,
   } = React.useContext(LoginContext);
+
+  
 
   const loginCount = (e) => {
     e.preventDefault();
@@ -45,12 +50,27 @@ const Login = (props) => {
   };
 
   return (
-    <main className="flex-col justify-center content-center">
-      <h2 className="text-5xl my-10 mt-15 text-center"> Hola Bienvenides </h2>
-      <h2 className="text-pink-700 text-center mb-10">
+    <main className=" img-fluid" style={{ backgroundImage: 'url("https://i.ibb.co/LQngrfq/pexels-evg-kowalievska-1170986opaco.jpg")', backgroundRepeat: 'no-repeat',  backgroundSize: 'cover', height: '100vh', overflowY: 'auto' }}>
+      <div className="bg-opacity-50 bg-black absolute top-0 left-0 w-full h-full"></div>
+      <img src="https://images.jumpseller.com/store/luna-pets/store/logo/logo_2.png?1682603062" alt="logo" className="mx-auto mt-5" style={{ width: '300px', height: 'auto', margin:'25px'}} />
+      <div className="container_flex">
+        <div className="textLogin">
+          <h2 class="slider-block__title">Los <b>mejores servicios</b> para tu mascota.</h2>
+          <h5 className="slider-block__text">Tenemos para ti paseos, visitas, alojamiento, cuidados a domicilio y más.</h5>
+          <Link to={'https://lunapets.co/'}>
+          <button className="ConocerMas">
+          Quiero Saber Más!
+          
+        </button>
+        </Link>
+        </div>
+        
+      <div className='displayfle'>
+      <h2 className="subtitulo_bienvenidos">
         {" "}
-        {esRegistro ? "Registrate" : "Ingresar a mi cuenta"}
+        {esRegistro ? "Registrate" : "  Ingresar Cuenta"}
       </h2>
+      
       <form onSubmit={loginCount} className="bg-pink-100 p-5 rounded-lg">
         <div className="mb-6">
           {error ? (
@@ -102,7 +122,7 @@ const Login = (props) => {
         <div className="mb-6">
           <label className="block mb-2  text-gray-900 dark:text-gray-300">
             {" "}
-            Cotraseña{" "}
+            Contraseña{" "}
           </label>
           <input
             type="password"
@@ -120,32 +140,35 @@ const Login = (props) => {
             type="submit"
             className="mt-1 justify-center text-white bg-pink-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
-            {esRegistro ? "Registrar" : "Acceder"}
+            {esRegistro ? "Registrar" : "Acceder ➞"}
           </button>{" "}
-        </div>
-      </form>
-      <p className="text-center mt-6 text-xl text-bold">
-        <button
-          className="btn btn-sm text-pink-800 btn-info btn-block"
-          type="button"
-          onClick={() => setEsRegistro(!esRegistro)}
-        >
-          {esRegistro ? "¿Ya tienes cuenta?" : "¿No tienes cuenta?"}
-        </button>
-      </p>
-
-      <p className="text-center">
+          <p className="text-center">
         {!esRegistro ? (
            <Link to={`/reset`}>
           <button
-            className="btn mt-2 btn-sm text-pink-100 btn-info btn-block"
+            className="forget mt-2 "
             type="button"
           >
-            Olvidé mi contraseña
+            ¿Olvidaste tu contraseña?
           </button>
           </Link>
         ) : null}
       </p>
+          <p className="text-center mt-6 text-xl text-bold">
+        <button
+          className="RegisterStyle"
+          type="button"
+          onClick={() => setEsRegistro(!esRegistro)}
+        >
+          {esRegistro ? "¿Ya tienes cuenta?" : "Registrate Aquí"}
+        </button>
+      </p>
+      
+        </div>
+      </form>
+      </div>
+      </div>
+      <Footer />
     </main>
   );
 };

@@ -23,6 +23,8 @@ const LoginProvider = (props) => {
   const [password, setPassword] = React.useState("");
   const [error, setError] = React.useState("");
   const [esRegistro, setEsRegistro] = React.useState(false);
+
+  
  
 
   //const history = useHistory()
@@ -39,13 +41,15 @@ const LoginProvider = (props) => {
             displayName: name,
             email: user.email,
             uid: user.uid,
+            phone: user.phoneNumber,
+            descrptions: user.metadata,
           });
           console.log("usuario creado", user);
           setEmail("");
           setPassword("");
           setName("");
           setError(null);
-          navigate("/role");
+          navigate("/productos");
         } else {
           // Manejar el caso cuando 'user' es nulo o indefinido
           setError("Ha ocurrido un error al crear la cuenta.");
@@ -81,7 +85,7 @@ const LoginProvider = (props) => {
         setName("");
         setError(null);
         //history.push("/role")
-        navigate("/role");
+        navigate("/ServiciosSolicitados");
       })
       .catch((error) => {
         if (error.code === "auth/missing-email") {
@@ -140,8 +144,6 @@ const resetPassword = (email) => {
     // ..
   });
 }
-
-
 
   const totalProps = {
     userRegister,

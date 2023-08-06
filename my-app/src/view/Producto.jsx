@@ -3,6 +3,7 @@ import addToCart from './MenuCart';
 import { useCart } from '../Context/CartProvider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import TopNavbar from '../Navbar/TopNavbar';
 
 const Carrito = () => {
     const { cartItems } = useCart();
@@ -34,7 +35,10 @@ const Productos = () => {
 
   return (
     <div className="productos">
+      <div>
+     <TopNavbar />
       <h2>Productos Disponibles</h2>
+
       <ul>
         {productos.map((producto) => (
           <li key={producto.id}>
@@ -45,6 +49,7 @@ const Productos = () => {
         ))}
       </ul>
       <Carrito />
+      </div>
     </div>
   );
 };
