@@ -23,7 +23,7 @@ const App = () => {
             <Route path="/" element={<Login />} />
             <Route path="/ServiciosSolicitados" element={<ServiciosSolicitados />} />
             <Route path="/reset" element={<Reset />} />
-            {/* <Route path="/Payment/:total" element={<Payment />} /> */}
+            <Route path="/Payment/:total" element={<Payment />} />
           </Routes>
           </CartProvider>
           <FloatingButton />

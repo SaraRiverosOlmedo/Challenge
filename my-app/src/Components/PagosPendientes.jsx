@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate} from 'react-router-dom';
 import serviciosDetalle from '../source/serviciosDetalle.json';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import TarjetaPago from './TarjetaPago';
 
 
 const filtrarPorEstado = (estado) => {
@@ -71,10 +72,11 @@ const PendientesTable = () => {
           ))}
         </tbody>
       </table>
-      <div>
+      {/* <div>
         <h3>Total a Pagar: {sumaPendientes}</h3>
-      </div>
-      {pendientesSeleccionados.length > 0 ? (
+      </div> */}
+      {pendientesSeleccionados.length > 0 && <TarjetaPago totalPagar={sumaPendientes} />}
+      {/* {pendientesSeleccionados.length > 0 ? (
           <Link to={`/Payment/${sumaPendientes}`}>
           <button className='btnPagar'>Proceder al Pago</button>
         </Link>
@@ -82,7 +84,7 @@ const PendientesTable = () => {
         <button className='btnPagar' onClick={() => alert('Debe seleccionar al menos un servicio a pagar')}>
           Proceder al Pago
         </button>
-      )}
+      )} */}
     </div>
   );
 };

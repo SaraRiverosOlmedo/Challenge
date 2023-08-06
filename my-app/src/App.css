@@ -198,6 +198,10 @@ tr{
   
   
 }
+.detallesStyle{
+  display: flex;
+  flex-direction: row;
+}
 .btnAgregar{
   background: #090909;
   color: white;
@@ -342,6 +346,15 @@ input[type="password"] {
 
 /* Estilos responsivos para smartphone y iPhone */
 @media (max-width: 576px) {
+  .tableStyle {
+    width: 80%;
+    padding: 40px 5px 0px 5px;
+    margin: 22px 5px;
+    border-radius: 20px;
+  }
+  .logoEmpresa{
+    margin: 25px 25px 0px 25px;
+  }
   .trPendientes {
     font-size: x-large;
     display: flex;
@@ -355,6 +368,15 @@ input[type="password"] {
     align-items: center;
     background: #dee2e6b5;
     margin: 2px 9px;
+}
+.ContainerPagados {
+  border: 4px solid orange;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #dee2e6b5;
+  margin: 32px 9px;
 }
   .btnSalir{
     background: none;

@@ -1,82 +1,75 @@
 import React, { useState } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
-import { useCart } from '../Context/CartProvider';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const TarjetaPago = ({ total }) => {
+const TarjetaPago = ({ totalPagar }) => {
   const [numeroTarjeta, setNumeroTarjeta] = useState('');
+  const [nombreTitular, setNombreTitular] = useState('');
   const [fechaVencimiento, setFechaVencimiento] = useState('');
-  const [codigoSeguridad, setCodigoSeguridad] = useState('');
-  const [pagoExitoso, setPagoExitoso] = useState(false);
+  const [cvv, setCvv] = useState('');
 
-  const { cartItems } = useCart();
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      
-      setPagoExitoso(true);
-    } catch (error) {
-      console.error('Error al simular el pago:', error);
+  
+  const enmascararNumero = (numero) => {
+    if (numero.length >= 4) {
+      const numerosEnmascarados = '•'.repeat(numero.length - 4) + numero.slice(-4);
+      return numerosEnmascarados;
+    } else {
+      return numero;
     }
   };
 
   return (
-    <div>
-      <h1>Ingrese los detalles de su tarjeta de pago</h1>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="numeroTarjeta">
-          <Form.Label>Número de Tarjeta</Form.Label>
-          <Form.Control
+    <div className="tarjeta-pago">
+      <h2>Total a Pagar: ${totalPagar}</h2>
+      <div className="form-group">
+        <label htmlFor="numeroTarjeta">Número de Tarjeta:</label>
+        <input
+          type="text"
+          id="numeroTarjeta"
+          className="form-control"
+          placeholder="Ingresa el número de tarjeta"
+          value={numeroTarjeta}
+          onChange={(e) => setNumeroTarjeta(e.target.value)}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="nombreTitular">Nombre del Titular:</label>
+        <input
+          type="text"
+          id="nombreTitular"
+          className="form-control"
+          placeholder="Nombre del titular de la tarjeta"
+          value={nombreTitular}
+          onChange={(e) => setNombreTitular(e.target.value)}
+        />
+      </div>
+      <div className="form-row detallesStyle">
+        <div className="form-group col-md-6">
+          <label htmlFor="fechaVencimiento">Fecha de Vencimiento:</label>
+          <input
             type="text"
-            value={numeroTarjeta}
-            onChange={(e) => setNumeroTarjeta(e.target.value)}
-            placeholder="Ingrese el número de tarjeta"
-          />
-        </Form.Group>
-
-        <Form.Group controlId="fechaVencimiento">
-          <Form.Label>Fecha de Vencimiento</Form.Label>
-          <Form.Control
-            type="text"
+            id="fechaVencimiento"
+            className="form-control"
+            placeholder="MM/AA"
             value={fechaVencimiento}
             onChange={(e) => setFechaVencimiento(e.target.value)}
-            placeholder="MM/AA"
           />
-        </Form.Group>
-
-        <Form.Group controlId="codigoSeguridad">
-          <Form.Label>Código de Seguridad</Form.Label>
-          <Form.Control
+        </div>
+        <div className="form-group col-md-6">
+          <label htmlFor="cvv">CVV:</label>
+          <input
             type="text"
-            value={codigoSeguridad}
-            onChange={(e) => setCodigoSeguridad(e.target.value)}
-            placeholder="CVC"
+            id="cvv"
+            className="form-control"
+            placeholder="CVV"
+            value={cvv}
+            onChange={(e) => setCvv(e.target.value)}
           />
-        </Form.Group>
-
-        <Button variant="primary" type="submit">
-          Pagar
-        </Button>
-      </Form>
-
-      {pagoExitoso && (
-        <Alert variant="success" className="mt-3">
-          El pago se ha realizado exitosamente.
-        </Alert>
-      )}
-
-      <div>
-        <h1>Detalle de la compra</h1>
-        <ul>
-          {cartItems.map((item) => (
-            <li key={item.id}>
-              <span>{item.nombre}</span> - <span>${item.precio}</span>
-            </li>
-          ))}
-        </ul>
-        <p>Total a pagar: ${total}</p>
+        </div>
       </div>
+      <div className="tarjeta-enmascarada">
+        <p>{enmascararNumero(numeroTarjeta)}</p>
+      </div>
+      <button className='btnPagar'>Pagar</button>
     </div>
   );
 };
